@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marketplace — Вход</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#0b1020; color:#e8eaf0; }
+    .card { max-width: 420px; margin: 60px auto; padding: 24px; background:#141b2d; border-radius: 12px; }
+    label { display:block; margin: 12px 0 6px; }
+    input { width:100%; padding: 10px; border-radius: 8px; border: 1px solid #2b3554; background:#0f1526; color:#e8eaf0; }
+    button { width:100%; margin-top: 16px; padding: 10px; border-radius: 10px; border: 0; background:#4f7cff; color:#fff; font-weight: 700; cursor:pointer; }
+    .hint { margin-top: 14px; font-size: 12px; color:#a9b0c3; }
+    .alert { margin-top: 14px; padding: 10px; border-radius: 10px; background:#2b1a1a; border: 1px solid #5b2a2a; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 style="margin-top:0">Вход в Marketplace</h1>
+
+    <form method="post" action="/login">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="text" autocomplete="username" />
+
+      <label for="password">Пароль</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" />
+
+      <button id="login-button" type="submit">Войти</button>
+    </form>
+
+    {% if error_message %}
+      <div id="flash" class="alert">{{ error_message }}</div>
+    {% elif info_message %}
+      <div id="flash" class="alert" style="background:#13244a; border-color:#224488">{{ info_message }}</div>
+    {% else %}
+      <div id="flash" style="display:none"></div>
+    {% endif %}
+
+    <div class="hint">
+      Тестовый аккаунт для автотестов:<br/>
+      Email: <b>user@example.com</b><br/>
+      Пароль: <b>Password123!</b>
+    </div>
+  </div>
+</body>
+</html>

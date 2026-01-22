@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marketplace — Профиль</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#0b1020; color:#e8eaf0; }
+    .wrap { max-width: 720px; margin: 50px auto; padding: 24px; background:#141b2d; border-radius: 12px; }
+    .pill { display:inline-block; padding: 6px 10px; border-radius: 999px; background:#0f1526; border:1px solid #2b3554; }
+    button { margin-top: 18px; padding: 10px 12px; border-radius: 10px; border: 0; background:#ff5b5b; color:#fff; font-weight: 700; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 id="profile-header" style="margin-top:0">Профиль пользователя</h1>
+    <div>Вы вошли как: <span id="user-email" class="pill">{{ user_email }}</span></div>
+
+    <form method="post" action="/logout">
+      <button id="logout-button" type="submit">Выйти</button>
+    </form>
+  </div>
+</body>
+</html>
